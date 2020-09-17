@@ -144,18 +144,22 @@
             </span>
           </dd>
         </dl>
-        <v-btn text> 이벤트 결제 진행하기</v-btn>
+        <v-btn text @click="$refs.payment.open(true)"> 이벤트 결제 진행하기</v-btn>
       </div>
     </div>
+
+    <PaymentModal ref="payment"/>
   </div>
 </template>
 
 <script>
 import SubHeader from '@/components/subHeader.vue';
+import PaymentModal from '@/components/modal/payment.vue';
 
 export default {
   components: {
     SubHeader,
+    PaymentModal,
   },
   data: () => ({
 		date: new Date().toISOString().substr(0, 10),
