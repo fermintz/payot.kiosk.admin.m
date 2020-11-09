@@ -75,27 +75,24 @@
           <dt>{{item}}</dt>
           <dd>
             <span class="first">
-              <label>종합 평균(425건)</label>
-              <strong>3,214,000</strong>
+              <label>종합 평균({{randomValue(100,120)}}건)</label>
+              <strong>{{randomValue(100000,300000)}}</strong>
             </span>
             <span>
-              <label>세탁기 평균(201건)</label>
-              <strong>1,325,000</strong>
+              <label>세탁기 평균({{randomValue(50,60)}}건)</label>
+              <strong>{{randomValue(100000,300000)}}</strong>
             </span>
             <span>
-              <label>건조기 평균(186건)</label>
-              <strong>1,280,500</strong>
+              <label>건조기 평균({{randomValue(50,60)}}건)</label>
+              <strong>{{randomValue(100000,300000)}}</strong>
             </span>
             <span>
-              <label>기타장비 평균(23건)</label>
-              <strong>650,000</strong>
+              <label>기타장비 평균({{randomValue(10,20)}}건)</label>
+              <strong>{{randomValue(100000,300000)}}</strong>
             </span>
           </dd>
         </dl>
-        
       </div>
-
-
     </div>
   </div>
 </template>
@@ -103,6 +100,8 @@
 <script>
 import LineChart from '@/components/chart-line.vue';
 import SubHeader from '@/components/subHeader.vue';
+import faker from 'faker';
+
 export default {
   components: {
     SubHeader,
@@ -225,6 +224,11 @@ export default {
       },
     };
   },
+  methods:{
+    randomValue(min, max){
+      return faker.random.number({min, max})
+    }
+  }
 };
 </script>
 

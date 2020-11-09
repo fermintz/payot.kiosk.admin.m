@@ -1,0 +1,141 @@
+{
+  "data" : [
+    {
+      "date": "1일",
+      "eqNumber": 22,
+      "eqSales": 130000,
+      "kioskCoinNum": 2,
+      "kioskCoinSales": 11000,
+      "kioskCardNum": 10,
+      "kioskCardSales": 57500
+    },
+    {
+      "date": "2일",
+      "eqNumber": 24,
+      "eqSales": 144000,
+      "kioskCoinNum": 4,
+      "kioskCoinSales": 24000,
+      "kioskCardNum": 14,
+      "kioskCardSales": 84600
+    },
+    {
+      "date": "3일",
+      "eqNumber": 17,
+      "eqSales": 99500,
+      "kioskCoinNum": 5,
+      "kioskCoinSales": 30000,
+      "kioskCardNum": 8,
+      "kioskCardSales": 47500
+    },
+    {
+      "date": "4일",
+      "eqNumber": 29,
+      "eqSales": 174500,
+      "kioskCoinNum": 13,
+      "kioskCoinSales": 75000,
+      "kioskCardNum": 14,
+      "kioskCardSales": 85500
+    },
+    {
+      "date": "5일",
+      "eqNumber": 11,
+      "eqSales": 63000,
+      "kioskCoinNum": 3,
+      "kioskCoinSales": 18000,
+      "kioskCardNum": 4,
+      "kioskCardSales": 23000
+    },
+    {
+      "date": "6일",
+      "eqNumber": 13,
+      "eqSales": 80000,
+      "kioskCoinNum": 3,
+      "kioskCoinSales": 15000,
+      "kioskCardNum": 11,
+      "kioskCardSales": 63500
+    },
+    {
+      "date": "7일",
+      "eqNumber": 1,
+      "eqSales": 7500,
+      "kioskCoinNum": 3,
+      "kioskCoinSales": 20000,
+      "kioskCardNum": 6,
+      "kioskCardSales": 34500
+    },
+    {
+      "date": "8일",
+      "eqNumber": 10,
+      "eqSales": 60000,
+      "kioskCoinNum": 3,
+      "kioskCoinSales": 16000,
+      "kioskCardNum": 22,
+      "kioskCardSales": 129000
+    },
+    {
+      "date": "9일",
+      "eqNumber": 15,
+      "eqSales": 90500,
+      "kioskCoinNum": 6,
+      "kioskCoinSales": 33000,
+      "kioskCardNum": 18,
+      "kioskCardSales": 105300
+    },
+    {
+      "date": "10일",
+      "eqNumber": 9,
+      "eqSales": 55500,
+      "kioskCoinNum": 2,
+      "kioskCoinSales": 10000,
+      "kioskCardNum": 2,
+      "kioskCardSales": 14500
+    },
+    {
+      "date": "11일",
+      "eqNumber": 20,
+      "eqSales": 119500,
+      "kioskCoinNum": 9,
+      "kioskCoinSales": 55000,
+      "kioskCardNum": 12,
+      "kioskCardSales": 71500
+    },
+    {
+      "date": "12일",
+      "eqNumber": 19,
+      "eqSales": 112500,
+      "kioskCoinNum": 2,
+      "kioskCoinSales": 10000,
+      "kioskCardNum": 7,
+      "kioskCardSales": 42400
+    },
+    {
+      "date": "13일",
+      "eqNumber": 17,
+      "eqSales": 101000,
+      "kioskCoinNum": 1,
+      "kioskCoinSales": 5000,
+      "kioskCardNum": 8,
+      "kioskCardSales": 46000
+    },
+    {
+      "date": "14일",
+      "eqNumber": 12,
+      "eqSales": 71000,
+      "kioskCoinNum": 0,
+      "kioskCoinSales": 0,
+      "kioskCardNum": 10,
+      "kioskCardSales": 60000
+    },
+    {
+      "date": "15일",
+      "eqNumber": 14,
+      "eqSales": 86000,
+      "kioskCoinNum": 3,
+      "kioskCoinSales": 15000,
+      "kioskCardNum": 4,
+      "kioskCardSales": 22000
+    }
+  
+  ]
+}
+    

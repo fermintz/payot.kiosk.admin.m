@@ -28,7 +28,7 @@
               <dt>이용이 가장 많은 달</dt>
               <dd>
                 <label>1월</label>
-                <span>평균매출 324,000원</span>
+                <span>매출 5,320,000원</span>
               </dd>
             </dl>
           </v-col>
@@ -37,7 +37,7 @@
               <dt>이용이 가장 적은 달</dt>
               <dd>
                 <label>5월</label>
-                <span>평균매출 94,000원</span>
+                <span>매출 3,194,000원</span>
               </dd>
             </dl>
           </v-col>
@@ -73,24 +73,24 @@
             </span>
           </dd>
         </dl>
-        <dl v-for="item in 7" :key="item.index">
+        <dl v-for="(item, index) in 12" :key="index">
           <dt>2020-0{{item}}</dt>
           <dd>
             <span class="first">
-              <label>종합(425건)</label>
-              <strong>3,214,000</strong>
+              <label>종합({{randomNumber(350,600).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}건)</label>
+              <strong>{{randomNumber(3000000,5400000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</strong>
             </span>
             <span>
-              <label>세탁기(201건)</label>
-              <strong>1,325,000</strong>
+              <label>세탁기({{ randomNumber(150,200).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}건)</label>
+              <strong>{{ randomNumber(1000000,2000000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</strong>
             </span>
             <span>
-              <label>건조기(186건)</label>
-              <strong>1,280,500</strong>
+              <label>건조기({{ randomNumber(150,200).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}건)</label>
+              <strong>{{ randomNumber(1000000,2000000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</strong>
             </span>
             <span>
-              <label>기타장비(23건)</label>
-              <strong>650,000</strong>
+              <label>기타장비({{ randomNumber(50,100).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}건)</label>
+              <strong>{{ randomNumber(100000,500000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}}</strong>
             </span>
           </dd>
         </dl>
@@ -134,6 +134,7 @@
 <script>
 import BarChart from '@/components/chart-bar.vue';
 import SubHeader from '@/components/subHeader.vue';
+import faker from 'faker';
 
 export default {
   components: {
@@ -161,19 +162,19 @@ export default {
               label: '세탁기',
               backgroundColor: 'rgba(0,150,255,1)',
               barPercentage: 0.3,
-              data: [201, 198, 168, 184, 200, 195, 231, 214, 188],
+              data: [...this.randomValue(113000,2259000,12)],
             },
             {
               label: '건조기',
               backgroundColor: 'rgba(255,0,110,1)',
               barPercentage: 0.3,
-              data: [186, 184, 184, 164, 195, 190, 224, 210, 180],
+              data: [...this.randomValue(113000,2259000,12)],
             },
             {
               label: '기타장비',
               backgroundColor: 'rgba(131,56,236,1)',
               barPercentage: 0.3,
-              data: [23, 21, 19, 25, 30, 12, 23, 24, 20],
+              data: [...this.randomValue(513000,1259000,12)],
             },
           ],
         },
@@ -200,6 +201,15 @@ export default {
       },
     };
   },
+
+  methods:{
+    randomValue(min,max,count){
+      return new Array(count).fill().map(()=> faker.random.number({min, max}));
+    },
+    randomNumber(min, max){
+      return faker.random.number({min, max});
+    }
+  }
 };
 </script>
 

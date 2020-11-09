@@ -87,80 +87,48 @@
 
       <div class="dataList">
         <dl class="tableTotal">
-          <dt>2020-07-01 ~ 2020-07-15 합계</dt>
+          <dt>2020-10-01 ~ 2020-10-15 합계</dt>
           <dd>
             <span class="first">
-              <label>전체(494건)</label>
-              <strong>2,244,000</strong>
+              <label>전체(877건)</label>
+              <strong>5,259,000</strong>
             </span>
             <span>
-              <label>세탁기(214건)</label>
-              <strong>1,104,000</strong>
+              <label>장비.현금(447건)</label>
+              <strong>2,680,000</strong>
             </span>
             <span>
-              <label>건조기(205건)</label>
-              <strong>985,000</strong>
+              <label>키오스크.현금(114건)</label>
+              <strong>686,000</strong>
             </span>
             <span>
-              <label>기타장비(86건)</label>
-              <strong>245,000</strong>
+              <label>키오스크.카드(316건)</label>
+              <strong>1,893,000</strong>
             </span>
           </dd>
         </dl>
-        <dl v-for="item in 7" :key="item.index">
-          <dt>2020-07-0{{item}}</dt>
+        <dl v-for="(item, index) in this.dummys" :key="index">
+          <dt>2020-07-{{index + 1}}</dt>
           <dd>
             <span class="first">
-              <label>종합(38건)</label>
-              <strong>144,000</strong>
+              <label>종합({{item.eqNumber + item.kioskCoinNum + item.kioskCardNum}}건)</label>
+              <strong>{{item.eqSales + item.kioskCoinSales + item.kioskCardSales}}</strong>
             </span>
             <span>
-              <label>세탁기(18건)</label>
-              <strong>84,000</strong>
+              <label>장비(현금) {{item.eqNumber}}건</label>
+              <strong>{{item.eqSales}}</strong>
             </span>
             <span>
-              <label>건조기(17건)</label>
-              <strong>65,500</strong>
+              <label>키오스크(현금) {{item.kioskCoinNum}}건</label>
+              <strong>{{item.kioskCoinSales}}</strong>
             </span>
             <span>
-              <label>기타장비(3건)</label>
-              <strong>12,000</strong>
+              <label>키오스크(카드) {{item.kioskCardNum}}건</label>
+              <strong>{{item.kioskCardSales}}</strong>
             </span>
           </dd>
         </dl>
-        
       </div>
-
-			<!-- <div class="dataTable">
-				<table cellspacing="0" cellpadding="0">
-					<tr>
-						<th>날짜</th>
-						<th>전체</th>
-						<th>세탁기</th>
-						<th>건조기</th>
-						<th>기타장비</th>
-					</tr>
-					<tr v-for="item in 31" :key="item">
-						<td>{{item}}일</td>
-						<td>
-							<span class="number">(12)</span>
-							<span class="price">1,435,000</span>
-						</td>
-						<td>
-							<span class="number">(12)</span>
-							<span class="price">691,000</span>
-						</td>
-						<td>
-							<span class="number">(12)</span>
-							<span class="price">546,000</span>
-						</td>
-						<td>
-							<span class="number">(12)</span>
-							<span class="price">245,000</span>
-						</td>
-					</tr>
-				</table>
-			</div> -->
     </div>
   </div>
 </template>
@@ -168,6 +136,9 @@
 <script>
 import BarChart from '@/components/chart-bar.vue';
 import SubHeader from '@/components/subHeader.vue';
+import dummyData from '../stats/dummy.json';
+import faker from 'faker';
+
 export default {
   components: {
     SubHeader,
@@ -182,35 +153,25 @@ export default {
 
       chart: {
         chartdata: {
-          labels: [
-            '1일',
-            '2일',
-            '3일',
-            '5일',
-            '6일',
-            '7일',
-            '8일',
-            '9일',
-            '10일',
-          ],
+          labels: ['1일','2일','3일','5일','6일','7일','8일','9일','10일','11일','12일','13일','14일','15일'],
           datasets: [
             {
-              label: '세탁기',
-              backgroundColor: 'rgba(0,150,255,1)',
-              barPercentage: 0.3,
-              data: [3, 8, 4, 16, 12, 15, 14, 12, 9],
+              label: '장비(현금)',
+              backgroundColor:'rgba(0,150,255,1)',
+              barPercentage:0.3,
+              data: [...this.randomChartValue(7500, 204500, 31)],
             },
             {
-              label: '건조기',
-              backgroundColor: 'rgba(255,0,110,1)',
-              barPercentage: 0.3,
-              data: [2, 7, 4, 16, 12, 15, 11, 12, 8],
+              label: '키오스크(현금)',
+              backgroundColor:'rgba(255,0,110,1)',
+              barPercentage:0.3,
+              data: [...this.randomChartValue(0, 75000, 31)],
             },
             {
-              label: '기타장비',
-              backgroundColor: 'rgba(131,56,236,1)',
-              barPercentage: 0.3,
-              data: [0, 2, 2, 4, 0, 38, 8, 2, 1],
+              label: '키오스크(장비)',
+              backgroundColor:'rgba(131,56,236,1)',
+              barPercentage:0.3,
+              data: [...this.randomChartValue(8500, 129000, 31)],
             },
           ],
         },
@@ -241,7 +202,20 @@ export default {
     dateRangeText() {
       return this.dates.join(' ~ ');
     },
+    dummys(){
+      return dummyData.data
+    },
   },
+  mounted(){
+
+  },
+  methods:{
+    randomChartValue(min,max,count){
+      return new Array(count).fill(0).map(() => faker.random.number({min, max}))
+    },
+
+    
+  }
 };
 </script>
 

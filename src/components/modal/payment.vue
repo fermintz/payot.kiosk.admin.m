@@ -9,10 +9,7 @@
         <dl class="card-number">
           <dt>카드번호</dt>
           <dd>
-            <input type="number">
-            <input type="number">
-            <input type="number">
-            <input type="number">
+            <input type="number" pattern="\d{4}-\d{4}-\d{4}-\d{4}">
           </dd>
         </dl>
         <dl class="card-date">
@@ -65,9 +62,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.dialog-wrap{
 
-}
 .payment{
   background:#fff;
   padding:20px;
