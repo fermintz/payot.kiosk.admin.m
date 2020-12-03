@@ -17,6 +17,7 @@ import KioskMember from '../views/kiosk/member.vue';
 import MemberPointControl from '../views/kiosk/member-point-control.vue';
 import MemberPointList from '../views/kiosk/member-point-list.vue';
 import Message from '../views/kiosk/message.vue';
+import UseTotal from '../views/kiosk/use-total.vue';
 
 import PoinTodaySales from '../views/poin/today-sales.vue';
 import PoinMonthSales from '../views/poin/month-sales.vue';
@@ -96,6 +97,16 @@ export const routes = [
         meta:{
           groupTitle: '키오스크',
           title: '회원 이용내역'
+        },
+      },
+
+      {
+        path:"/kiosk/use-total",
+        name:'use-total',
+        component: UseTotal,
+        meta:{
+          groupTitle: '키오스크',
+          title: '키오스크 사용요약'
         },
       },
 

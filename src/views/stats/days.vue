@@ -213,8 +213,6 @@ export default {
     randomChartValue(min,max,count){
       return new Array(count).fill(0).map(() => faker.random.number({min, max}))
     },
-
-    
   }
 };
 </script>

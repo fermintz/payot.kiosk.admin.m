@@ -12,11 +12,12 @@
 import Header from '@/components/header.vue';
 import Drawers from '@/components/drawers.vue';
 
-
-
 export default {
   components:{
     Header, Drawers
+  },
+  methods:{
+
   }
 }
 </script>
